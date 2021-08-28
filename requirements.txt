@@ -1,0 +1,6 @@
+cffi==1.14.6
+numpy==1.21.1
+pkg_resources==0.0.0
+pycparser==2.20
+tcod==12.7.2
+typing-extensions==3.10.0.0
