@@ -6,8 +6,8 @@ import tcod
 
 import actions
 from actions import (
-    Action, 
-    BumpAction, 
+    Action,
+    BumpAction,
     PickupAction,
     WaitAction,
 )
@@ -19,33 +19,33 @@ if TYPE_CHECKING:
     from entity import Item
 
 MOVE_KEYS = {
-   # Arrow keys.
-   tcod.event.K_UP: (0, -1),
-   tcod.event.K_DOWN: (0, 1),
-   tcod.event.K_LEFT: (-1, 0),
-   tcod.event.K_RIGHT: (1, 0),
-   tcod.event.K_HOME: (-1, -1),
-   tcod.event.K_END: (-1, 1),
-   tcod.event.K_PAGEUP: (1, -1),
-   tcod.event.K_PAGEDOWN: (1, 1),
-   # Numpad keys.
-   tcod.event.K_KP_1: (-1, 1),
-   tcod.event.K_KP_2: (0, 1),
-   tcod.event.K_KP_3: (1, 1),
-   tcod.event.K_KP_4: (-1, 0),
-   tcod.event.K_KP_6: (1, 0),
-   tcod.event.K_KP_7: (-1, -1),
-   tcod.event.K_KP_8: (0, -1),
-   tcod.event.K_KP_9: (1, -1),
-   # Vi keys.
-   tcod.event.K_h: (-1, 0),
-   tcod.event.K_j: (0, 1),
-   tcod.event.K_k: (0, -1),
-   tcod.event.K_l: (1, 0),
-   tcod.event.K_y: (-1, -1),
-   tcod.event.K_u: (1, -1),
-   tcod.event.K_b: (-1, 1),
-   tcod.event.K_n: (1, 1),
+    # Arrow keys.
+    tcod.event.K_UP: (0, -1),
+    tcod.event.K_DOWN: (0, 1),
+    tcod.event.K_LEFT: (-1, 0),
+    tcod.event.K_RIGHT: (1, 0),
+    tcod.event.K_HOME: (-1, -1),
+    tcod.event.K_END: (-1, 1),
+    tcod.event.K_PAGEUP: (1, -1),
+    tcod.event.K_PAGEDOWN: (1, 1),
+    # Numpad keys.
+    tcod.event.K_KP_1: (-1, 1),
+    tcod.event.K_KP_2: (0, 1),
+    tcod.event.K_KP_3: (1, 1),
+    tcod.event.K_KP_4: (-1, 0),
+    tcod.event.K_KP_6: (1, 0),
+    tcod.event.K_KP_7: (-1, -1),
+    tcod.event.K_KP_8: (0, -1),
+    tcod.event.K_KP_9: (1, -1),
+    # Vi keys.
+    tcod.event.K_h: (-1, 0),
+    tcod.event.K_j: (0, 1),
+    tcod.event.K_k: (0, -1),
+    tcod.event.K_l: (1, 0),
+    tcod.event.K_y: (-1, -1),
+    tcod.event.K_u: (1, -1),
+    tcod.event.K_b: (-1, 1),
+    tcod.event.K_n: (1, 1),
 }
 
 WAIT_KEYS = {
@@ -212,10 +212,9 @@ class InventoryActivateHandler(InventoryEventHandler):
         """Return the action for the selected item."""
         return item.consumable.get_action(self.engine.player)
 
-
 class InventoryDropHandler(InventoryEventHandler):
     """Handle dropping an inventory item."""
-    
+
     TITLE = "Select an item to drop"
 
     def on_item_selected(self, item: Item) -> Optional[Action]:

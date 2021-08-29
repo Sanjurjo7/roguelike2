@@ -36,7 +36,7 @@ def main() -> None:
         max_rooms=max_rooms,
         room_min_size=room_min_size,
         room_max_size=room_max_size,
-        map_width=map_width, 
+        map_width=map_width,
         map_height=map_height,
         max_monsters_per_room=max_monsters_per_room,
         max_items_per_room=max_items_per_room,
@@ -72,6 +72,6 @@ def main() -> None:
                 engine.message_log.add_message(
                     traceback.format_exc(), color.error
                 )
-            
+
 if __name__ == "__main__":
     main()
