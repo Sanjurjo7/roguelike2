@@ -131,6 +131,7 @@ class AskUserEventHandler(EventHandler):
 
         By default returns to the main event handler.
         """
+        print("We're leaving now.")
         self.engine.event_handler = MainGameEventHandler(self.engine)
         return None
 
@@ -283,8 +284,8 @@ class LookHandler(SelectIndexHandler):
 class SingleRangedAttackHandler(SelectIndexHandler):
     """Handles targeting a single enemy. Only the enemy selected will be affected."""
     def __init__(
-        self, 
-        engine: Engine, 
+        self,
+        engine: Engine,
         callback: Callable[[Tuple[int, int]], Optional[Action]]
     ):
         super().__init__(engine)
